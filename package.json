@@ -1,0 +1,20 @@
+{
+  "name": "mega-menu",
+  "version": "1.0.0",
+  "description": "Multi dimantional Mega-menu Design",
+  "main": "index.js",
+  "scripts": {
+    "start": "sass  ./stylesheet/style.scss ./css/style.css --watch"
+  },
+  "keywords": [
+    "mega-menu",
+    "menu",
+    "multi-dimentional-mega-menu"
+  ],
+  "author": "Hasan Misbah <hasanmisbah01@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "node-sass": "^4.14.1",
+    "sass": "^1.26.10"
+  }
+}
