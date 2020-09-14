@@ -172,6 +172,13 @@ a {
                     width: 100%;
                     transition: .3s;
 
+                    &.active {
+                        &::before {
+                            left: 0;
+                        }
+
+                    }
+
                     &::before {
                         position: absolute;
                         content: '';
@@ -182,6 +189,7 @@ a {
                         background-color: #d5001c;
                         transition: .3s;
                     }
+
 
                     &:hover {
                         &::before {
@@ -270,12 +278,20 @@ a {
     z-index: auto;
 
     .tech-data {
-        display: block;
         bottom: 0;
         left: 0;
         right: 0;
         position: absolute;
         top: 0;
+        opacity: 0;
+        transition: .3s;
+
+        &.active {
+            display: block;
+            opacity: 1;
+        }
+
+
 
         .background-container {
             left: 0;
@@ -407,6 +423,22 @@ a {
             &-key {
                 text-decoration: none;
             }
+        }
+    }
+}
+
+.menu-item-third-level-text {
+    &.active {
+        &::before {
+            left: 0;
+        }
+    }
+}
+
+.tech-data-container.no-third {
+    .background-container {
+        &::after {
+            left: 0 !important;
         }
     }
 }
