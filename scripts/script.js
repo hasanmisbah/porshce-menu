@@ -1,7 +1,6 @@
 $(function () {
     let dataModel = '';
     $('.menu-item').hover(function (e) {
-
         //Remove if class exist
         $('.menu-models').removeClass('active');
         $('.menu-item a.menu-text').removeClass('active');
@@ -16,8 +15,8 @@ $(function () {
         $('.navigation-model > .menu-item-second-level:first-child > .navigation > .navigation-menu > .menu-item-third-level:first-child', $(this))
             .children('a.menu-item-third-level-text').addClass('active');
         $('.navigation-model > .menu-item-second-level:first-child > .tech-data-container > .tech-data:first-child', $(this)).addClass('active');
-
     });
+
     $('.menu-item-second-level').hover(function (e) {
         if ($(this).closest('.menu-item').hasClass('has-no-third')) {
             if ($(this).data().model) {
@@ -47,4 +46,33 @@ $(function () {
     $('.menu-items-wrapper').mouseleave(function () {
         $('.active').removeClass('active');
     });
+});
+
+
+
+$(function () {
+    let dataItem = '';
+    let dataView = "";
+    $(document).on('click', '[data-source]', function () {
+        dataItem = $(this).data().source;
+        $('.mobile-nav').removeClass('active')
+        $('.mobile-nav[data-item="' + dataItem + '"]').addClass('active');
+        console.log($(this).find('.menu-title'))
+    });
+    $(document).on('click', '.close-btn', function () {
+        $('.mobile-nav-third-level').removeClass('active')
+        $('.mobile-nav').removeClass('active')
+
+    });
+
+    $(document).on('click', '.mob-menu-text', function () {
+        dataView = $(this).data().view;
+        $('.mobile-nav-third-level[data-view="' + dataView + '"]').addClass('active');
+        $('.menu-title-third-level').text(dataView);
+        $('.item-model').text(dataView);
+    });
+
+    $(document).on('click', '.back', function () {
+        $('.mobile-nav-third-level').removeClass('active');
+    })
 });

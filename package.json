@@ -4,7 +4,8 @@
   "description": "Multi dimantional Mega-menu Design",
   "main": "index.js",
   "scripts": {
-    "start": "sass  ./stylesheet/style.scss ./css/style.css --watch"
+    "start": "sass  ./stylesheet/style.scss ./css/style.css --watch",
+    "serve": "live-server"
   },
   "keywords": [
     "mega-menu",
